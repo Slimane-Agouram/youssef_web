@@ -37,12 +37,15 @@ angular.module('App', ['ngMaterial', 'ui.router', 'ngResource'])
   });
 })
 
-.controller('HeaderController', function($scope, CartService){
+.controller('HeaderController', function($scope,$location, CartService){
   $scope.$watch(CartService.get, function(oldValue, newValue){
       console.log('changed');
       $scope.cartCount = CartService.get().length;
   }, true);
 
+  $scope.toHome = function(){
+        $location.path("home");
+  };
 
 })
 
