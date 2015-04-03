@@ -1,0 +1,62 @@
+<div class="ariane-thread" ng-controller="PathController">
+  <ul>
+    <span ng-repeat="location in locations">
+      <li>
+        <a ng-href="/#/{{location.url}}"><p ng-class="{arianeHere: $last}">{{location.name}}</p></a>
+      </li>
+      <li ng-hide="$last">
+        <i class="icon ion-ios-arrow-thin-right"></i>
+      </li>
+    </span>
+  </ul>
+</div>
+
+<div class="cart-messages">
+  <p>
+    <i class="icon ion-checkmark"></i>
+    The products were successfully added to your shopping cart
+  </p>
+</div>
+
+
+<table class="cart-detail">
+  <thead>
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Qty</th>
+      <th scope="col">Subtotal</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="item in items">
+
+      <td class="cart-name-col">
+        <div class="cart-item-img-container">
+          <div class="cart-item-img"></div>
+        </div>
+        <div class="cart-item-name-container">
+          <p class="cart-item-name">{{item.description}}</p>
+        </div>
+        <div class="cart-item-edit-container">
+          <md-button class="cart-item-edit">Edit</md-button>
+        </div>
+      </td>
+      <td class="cart-price-fields">{{item.price | currency}}</td>
+      <td class="cart-quantity-col">
+        <input type="number" ng-model="item.quantity">
+      </td>
+      <td class="cart-price-fields">{{item.price * item.quantity | currency}}</td>
+      <td class="cart-delete-col">
+        <md-button class="cart-item-delete" ng-click="remove(item.description)">x</md-button>
+        </td
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="cart-controls">
+    <md-button class="cart-continue-btn">CONTINUE SHOPPING</md-button>
+    <md-button class="cart-update-btn">UPDATE SHOPPING CART</md-button>
+  </div>

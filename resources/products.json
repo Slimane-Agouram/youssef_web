@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Product1 : description1",
+    "price": 20,
+    "categories": "categorie1"
+  },
+  {
+    "description": "Product2 : description2",
+    "price": 10,
+    "categories": "categorie2"
+  },
+  {
+    "description": "Product3 : description3",
+    "price": 15,
+    "categories":"categorie3"
+  },
+  {
+    "description": "Product4 : description4",
+    "price": 60,
+    "categories":"categorie4"
+  },
+  {
+    "description": "Product5 : description5",
+    "price": 98,
+    "categories": "categorie2"
+  },
+  {
+    "description": "Product6 : description6",
+    "price": 45,
+    "categories": "categorie4"
+  }
+]

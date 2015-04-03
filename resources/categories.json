@@ -1,0 +1,22 @@
+[
+  {
+    "name": "categorie1",
+    "count": 1,
+    "selected":true
+  },
+  {
+    "name": "categorie2",
+    "count": 2,
+    "selected":false
+  },
+  {
+    "name": "categorie3",
+    "count": 1,
+    "selected":false
+  },
+  {
+    "name": "categorie4",
+    "count": 2,
+    "selected":false
+  }
+]

@@ -1,0 +1,99 @@
+<div class="ariane-thread" ng-controller="PathController">
+  <ul>
+    <span ng-repeat="location in locations">
+      <li>
+        <a ng-href="/#/{{location.url}}"><p ng-class="{arianeHere: $last}">{{location.name}}</p></a>
+      </li>
+      <li ng-hide="$last">
+        <i class="icon ion-ios-arrow-thin-right"></i>
+      </li>
+    </span>
+  </ul>
+</div>
+
+
+
+
+
+<div class="category-box" ng-controller="CategoriesController">
+  <p class="category-box-title">Shop by</p>
+  <div class="category-box-content">
+    <a ng-click="selectCategory(category.name)">    
+      <p class="category-subtitle">Category</p>
+    </a>
+    <ul>
+      <li ng-repeat="category in categories" ng-class="{categorySelected: category.selected}">
+        <a class="category-box-item" ng-click="selectCategory(category.name)">
+          <i ng-show="category.selected" class="icon ion-ios-arrow-forward"> </i>
+          {{category.name}} ({{category.count}})
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<div class="content">
+
+  <div class="presentation-box">
+    <div class="presentation-box-top">
+      <p class="presentation-box-top-title">Vulputate adipiscing</p>
+      <p class="presentation-box-top-text">
+        <md-button ng-click="toggleHideOptions()">
+          Hide Option
+          <i class="icon ion-android-arrow-down"></i>
+        </md-button>
+      </p>
+    </div>
+    <div class="presentation-box-separation"></div>
+    <div class="presentation-box-bottom" ng-hide="optionsHidden">
+      <i class="fa fa-th-large" style="margin-left:10px; color: grey"></i>
+      <i class="fa fa-list-ul" style="color:red"></i>
+
+      <div class="presentation-box-controls">
+        <div class="presentation-box-show">
+          Show
+          
+          <select class="presentation-box-show-dropdown">
+            <option value="12">12 per page</option>
+          </select>
+        </div>
+        <div class="presentation-box-sort">
+          Sort by
+
+          <select class="presentation-box-sort-dropdown">
+            <option value="position">position</option>
+          </select>
+
+          <i class="icon ion-android-arrow-up"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="item-list" data-ng-controller="ItemsListController">
+    <div class="item" data-ng-repeat="item in items">
+      <div class="item-img" >
+        <md-button class="item-quick-shop-btn">QUICK SHOP</md-button>
+      </div>
+      <div class="item-info">
+        <p class="item-info-text">{{item.description}}</p>
+        <p class="item-info-price">{{item.price | currency}}</p>
+      </div>
+      <div class="item-controls">
+        <input type="button" class="item-button" ng-click="addToCart(item)" value="ADD TO CART"/>
+        <div class="item-controls-icons">
+          <a href="/"><img src="public/img/plus.png"  alt="plus"></a>
+          <a href="/"><img src="public/img/download.png"  alt="download"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
